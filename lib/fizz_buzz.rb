@@ -1,5 +1,7 @@
 def fizz_buzz(sum)
-  if sum % 15 == 0
+  if sum > 100
+    'Ruby'
+  elsif sum % 15 == 0
     'Fizz Buzz'
   elsif sum % 3 == 0
     'Fizz'
