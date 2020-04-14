@@ -4,9 +4,6 @@ def to_hex(r, g, b)
   end
 end
 
-def to_ints(number)
-  r = number[1..2].hex
-  g = number[3..4].hex
-  b = number[5..6].hex
-  [r, g, b]
+def to_ints(hex)
+  hex.scan(/\w\w/).map(&:hex)
 end
