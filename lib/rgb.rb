@@ -3,3 +3,10 @@ def to_hex(r, g, b)
     hex + n.to_s(16).rjust(2, '0')
   end
 end
+
+def to_ints(number)
+  r = number[1..2].hex
+  g = number[3..4].hex
+  b = number[5..6].hex
+  [r, g, b]
+end
