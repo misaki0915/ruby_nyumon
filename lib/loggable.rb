@@ -2,15 +2,19 @@ module Loggable
   def log(text)
     puts "[LOG] #{text}"
   end
+  module_function :log
 end
 
-class Product
-  extend Loggable
+Loggable.log('Hello.')
 
-  def self.create_products(names)
-    log 'create_products is called'
+class Product
+  include Loggable
+
+  def title
+    log 'title is called'
+    'A greate movie'
   end
 end
 
-Product.create_products([])
-Product.log('Hello.')
+product = Product.new
+product.title
