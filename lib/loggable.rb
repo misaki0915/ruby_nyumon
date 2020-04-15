@@ -5,25 +5,12 @@ module Loggable
 end
 
 class Product
-  include Loggable
+  extend Loggable
 
-  def title
-    log 'title is called'
-    'A great movie'
+  def self.create_products(names)
+    log 'create_products is called'
   end
 end
 
-class User
-  include Loggable
-
-  def name
-    log 'name is called'
-    'Alice'
-  end
-end
-
-product = Product.new
-product.title
-
-user = User.new
-user.name
+Product.create_products([])
+Product.log('Hello.')
