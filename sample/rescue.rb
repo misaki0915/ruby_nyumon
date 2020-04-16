@@ -1,9 +1,12 @@
-begin
-  1 / 0
-rescue => e
-  puts "エラークラス: #{e.class}"
-  puts "エラーメッセージ #{e.message}"
-  puts "バックトレース -----"
-  puts e.backtrace
-  puts "-----"
+def currency_of(country)
+  case country
+  when :japan
+    'yen'
+  when 'us'
+    'dollar'
+  else
+    raise ArgumentError.new("無効な国名です。#{country}")
+  end
 end
+
+currency_of('italy')
