@@ -1,21 +1,14 @@
-def greeting
+def greeting(&block)
   puts 'おはよう'
-  text = yield 'こんにちは', 12345
-  puts text
+  unless block.nil?
+    text = block.call('こんにちは')
+    puts text
+  end
   puts 'こんばんは'
 end
 
+greeting
+
 greeting do |text|
   text * 2
-end
-
-def greeting
-  puts 'Hello'
-  text = yield 'Hi'
-  puts text
-  puts 'Good Night'
-end
-
-greeting do |text, other|
-  text * 2 + other.inspect
 end
